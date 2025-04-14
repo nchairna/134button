@@ -80,33 +80,26 @@ class Button extends Widget{
         this._group = (this.parent as Window).window.group();
         this._rect = this._group.rect(this.width, this.height)
                                .radius(10)
-                               .stroke({ color: '#8a8a8a', width: 2 });  // Match our default gray stroke
-        this._rect.fill("#ffffff");  // Start with white background
+                               .stroke({ color: '#8a8a8a', width: 2 });  
+        this._rect.fill("#ffffff");  
         this._text = this._group.text(this._input)
             .font({
                 family: 'Arial, Helvetica, sans-serif',
                 size: this._fontSize,
                 weight: 'bold'
             });
-        // Set the outer svg element 
+      
         this.outerSvg = this._group;
-        // Add a transparent rect on top of text to 
-        // prevent selection cursor and to handle mouse events
+       
         let eventrect = this._group.rect(this.width, this.height)
                                   .opacity(0)
-                                  .radius(8)  // Match the radius of the visible rectangle
+                                  .radius(8) 
                                   .attr('id', 0);
 
         // Get the window dimensions
-        const windowWidth = (this.parent as Window).window.width();
-        const windowHeight = (this.parent as Window).window.height();
-        
-        // Calculate center position
-        const centerX = (Number(windowWidth) - this.width) / 2;
-        const centerY = (Number(windowHeight) - this.height) / 2;
+      
 
-        // Position the group in the center
-        this._group.move(centerX, centerY);
+     
         
         // Position the text
         this.positionText();
