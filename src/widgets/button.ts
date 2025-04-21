@@ -96,7 +96,7 @@ class Button extends Widget{
                                   .radius(8) 
                                   .attr('id', 0);
 
-        // Get the window dimensions
+
       
 
      
